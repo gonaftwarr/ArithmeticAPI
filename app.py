@@ -52,7 +52,6 @@ def divide():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-
 # ✅ Test endpoint to confirm rebuild worked
 @app.route('/test', methods=['GET'])
 def test():
