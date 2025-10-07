@@ -2,7 +2,14 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Addition
+# Root route (home page)
+@app.route('/')
+def home():
+    return "Welcome to the Arithmetic API!"
+
+
+
+# Addition route
 @app.route('/add', methods=['GET'])
 def add():
     try:
@@ -12,7 +19,7 @@ def add():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-# Subtraction
+# Subtraction route
 @app.route('/subtract', methods=['GET'])
 def subtract():
     try:
@@ -22,7 +29,7 @@ def subtract():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-# Multiplication
+# Multiplication route
 @app.route('/multiply', methods=['GET'])
 def multiply():
     try:
@@ -32,7 +39,8 @@ def multiply():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-# Division
+
+# Division route
 @app.route('/divide', methods=['GET'])
 def divide():
     try:
@@ -44,5 +52,13 @@ def divide():
     except Exception as e:
         return jsonify({"error": str(e)})
 
+
+# ✅ Test endpoint to confirm rebuild worked
+@app.route('/test', methods=['GET'])
+def test():
+    return jsonify({"message": "This is a test endpoint — rebuild successful!"})
+
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
