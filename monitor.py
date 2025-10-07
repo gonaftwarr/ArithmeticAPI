@@ -8,7 +8,7 @@ import os
 # ----------------------------
 WATCH_FILE = "app.py"                  # File to monitor
 DOCKER_IMAGE = "gonaft/myapp"          # Docker Hub repo
-CONTAINER_NAME = "myapp_container"     # Custom container name
+CONTAINER_NAME = "vigilant_panini"     # Custom container name
 CHECK_INTERVAL = 5                     # Seconds between checks
 # ----------------------------
 
